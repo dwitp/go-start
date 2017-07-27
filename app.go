@@ -9,6 +9,7 @@ type Vertex struct {
 }
 
 func main() {
-    vertex := Vertex{1, 2}
-    printVar("vertex", vertex)
+    v := Vertex{1, 2}
+    v.X = 4
+    printVar("v", v)
 }
