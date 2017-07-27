@@ -1,14 +1,15 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+)
 
-func printVar(varName string, theVar interface{}) {
+func dump(args ...interface{}) {
     fmt.Println("-----------------------------------------------------")
-    fmt.Print(varName)
-    fmt.Printf(" <%T>", theVar)
+    for i := range args {
+        fmt.Printf("%+v\n", args[i])
+    }
+    fmt.Println("-----------------------------------------------------")
     fmt.Println()
-    fmt.Printf("%+v\n", theVar)
-    fmt.Println("-----------------------------------------------------")
-    fmt.Println();
 }
 
