@@ -1,0 +1,17 @@
+[app]
+name = "go-app"
+version = "0.0.1"
+port = 8080
+
+[cache]
+host = "localhost"
+port = 6379
+max_idle = 100
+idle_timeout = 120
+enabled = true
+
+[asset]
+base_url = "/asset"
+css_path = "css"
+js_path = "js"
+img_path = "img"

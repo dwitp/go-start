@@ -7,7 +7,7 @@ func printVar(varName string, theVar interface{}) {
     fmt.Print(varName)
     fmt.Printf(" <%T>", theVar)
     fmt.Println()
-    fmt.Println(theVar)
+    fmt.Printf("%+v\n", theVar)
     fmt.Println("-----------------------------------------------------")
     fmt.Println();
 }

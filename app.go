@@ -1,24 +1,20 @@
 package main
 
 import (
-    "github.com/dwitp/go-start/src/config"
+    "./pkg/config"
+    "github.com/burntsushi/toml"
 )
 
 func main() {
-    i, j := 42, 2701
+    confData, err := FindAndReadConfig("config.toml")
+    if err != nil {
+        printVar("err", err)
+    }
 
-    p := &i
-    printVar("p", p)
-    printVar("*p", *p)
+    var config config.Config
+    if _, err := toml.Decode(confData, &config); err != nil {
+        printVar("err", err)
+    }
 
-    *p = 21
-    printVar("i", i)
-
-    p = &j
-    *p = *p / 37
-    printVar("j", j)
-
-    v := Vertex{3, 4}
-    printVar("v", v)
-    printVar("v.Abs()", v.Abs())
+    printVar("config", config)
 }
