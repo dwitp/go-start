@@ -3,7 +3,15 @@ package main
 import (
     "./pkg/config"
     "github.com/burntsushi/toml"
+    "time"
 )
+
+func say(s string) {
+    for i := 0; i < 3; i++ {
+        time.Sleep(1000 * time.Millisecond)
+        printVar("s", s)
+    }
+}
 
 func main() {
     confData, err := FindAndReadConfig("config.toml")
@@ -17,4 +25,7 @@ func main() {
     }
 
     printVar("config", config)
+
+    go say("world")
+    say("hello")
 }
