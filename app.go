@@ -1,12 +1,6 @@
 package main
 
-import (
-    "fmt"
-)
-
 func main() {
-    fmt.Println("~~~", "app.go main")
-    // ==================================================
     i, j := 42, 2701
 
     p := &i
@@ -19,11 +13,8 @@ func main() {
     p = &j
     *p = *p / 37
     printVar("j", j)
-}
 
-func printVar(varName string, theVar interface{}) {
-    fmt.Print(" ~ " + varName);
-    fmt.Printf("(%T)", theVar);
-    fmt.Print(" : ", theVar);
-    fmt.Println();
+    v := Vertex{3, 4}
+    printVar("v", v)
+    printVar("v.Abs()", v.Abs())
 }
