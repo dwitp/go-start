@@ -3,7 +3,7 @@ package main
 import (
     "flag"
     "fmt"
-    "./pkg/util"
+    "github.com/dwitp/go-start/pkg/util"
     "os"
 )
 
