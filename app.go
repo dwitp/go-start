@@ -5,22 +5,14 @@ import (
 )
 
 func main() {
-    q := []int{2, 3, 5, 7, 11, 13}
-    u.D("q", q)
+    s := []int{2, 3, 5, 7, 11, 13}
 
-    r := []bool{true, false, true, true, false, true}
-    u.D("r", r)
+    s = s[1:4]
+    u.D("s", s)
 
-    s := []struct{
-        i int
-        b bool
-    }{
-        {2, true},
-        {3, false},
-        {5, true},
-        {7, true},
-        {11, false},
-        {13, true},
-    }
+    s = s[:2]
+    u.D("s", s)
+
+    s = s[1:]
     u.D("s", s)
 }
