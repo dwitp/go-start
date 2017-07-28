@@ -1,22 +1,13 @@
 package main
 
 import (
-    "github.com/dwitp/golang/src/u"
+    "fmt"
 )
 
+var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+
 func main() {
-    var s[]int
-    u.S(s)
-
-    // append works on nil slices.
-    s = append(s, 0)
-    u.S(s)
-
-    // The slice grows as needed.
-    s = append(s, 1)
-    u.S(s)
-
-    // We can add more than one element at a time.
-    s = append(s, 2, 3, 4)
-    u.S(s)
+    for i, v := range pow {
+        fmt.Printf("2**%d = %d\n", i, v)
+    }
 }
