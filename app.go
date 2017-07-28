@@ -2,25 +2,21 @@ package main
 
 import (
     "github.com/dwitp/golang/src/u"
-    "strings"
 )
 
 func main() {
-    // Create a tic-tac-toe board.
-    board := [][]string{
-        []string{"_", "_", "_"},
-        []string{"_", "_", "_"},
-        []string{"_", "_", "_"},
-    }
+    var s[]int
+    u.S(s)
 
-    // The players take turns.
-    board[0][0] = "X"
-    board[2][2] = "O"
-    board[1][2] = "X"
-    board[1][0] = "O"
-    board[0][2] = "X"
+    // append works on nil slices.
+    s = append(s, 0)
+    u.S(s)
 
-    for i := 0; i < len(board); i++ {
-        u.D(strings.Join(board[i], " "))
-    }
+    // The slice grows as needed.
+    s = append(s, 1)
+    u.S(s)
+
+    // We can add more than one element at a time.
+    s = append(s, 2, 3, 4)
+    u.S(s)
 }
