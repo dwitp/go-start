@@ -2,19 +2,19 @@ package main
 
 import (
     "github.com/dwitp/golang/src/u"
+    "math"
 )
 
-func fibonacci() func() int {
-    cur, next := 1, 0
-    return func() int {
-        cur, next = next, cur+next
-        return cur
+type MyFloat float64
+
+func (f MyFloat) Abs() float64 {
+    if f < 0 {
+        return float64(-f)
     }
+    return float64(f)
 }
 
 func main() {
-    f := fibonacci()
-    for i := 0; i < 10; i++ {
-        u.D(f())
-    }
+    f := MyFloat(-math.Sqrt2)
+    u.D(f.Abs())
 }
