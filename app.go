@@ -4,15 +4,18 @@ import (
     "github.com/dwitp/golang/src/u"
 )
 
-type Vertex struct {
-    Lat, Long float64
-}
-
-var m = map[string]Vertex{
-    "Bell Labs": {40.68433, -74.39967},
-    "Google": {37.42202, -122.08408},
-}
-
 func main() {
-    u.D(m)
+    m := make(map[string]int)
+
+    m["Answer"] = 42
+    u.D("The value:", m["Answer"])
+
+    m["Answer"] = 48
+    u.D("The value:", m["Answer"])
+
+    delete(m, "Answer")
+    u.D("The value:", m["Answer"])
+
+    v, ok := m["Answer"]
+    u.D("The value:", v, "Present?", ok)
 }
